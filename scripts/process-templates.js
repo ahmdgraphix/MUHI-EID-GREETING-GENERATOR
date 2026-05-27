@@ -25,6 +25,12 @@ async function processTemplates() {
       const newSize = Math.round(parseFloat(p1) * 1.3);
       return `font-size: ${newSize}px`;
     });
+
+    // Increase thin font weights for better legibility
+    css = css.replace(/font-weight:\s*300/g, 'font-weight: 500');
+    css = css.replace(/font-weight:\s*400/g, 'font-weight: 600');
+    css = css.replace(/font-weight:\s*normal/g, 'font-weight: 600');
+    css = css.replace(/font-weight:\s*lighter/g, 'font-weight: 500');
     
     // Clean CSS: Remove body background that conflicts, remove * reset
     css = css.replace(/\*\s*\{[^}]+\}/g, '');
