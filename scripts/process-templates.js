@@ -19,8 +19,12 @@ async function processTemplates() {
     // Set Title to EID CARD - X
     const title = `EID CARD - ${i + 1}`;
 
-    // Get CSS
+    // Get CSS and scale up all font sizes by 30% to make them more readable
     let css = $('style').html() || '';
+    css = css.replace(/font-size:\s*(\d+(?:\.\d+)?)px/g, (match, p1) => {
+      const newSize = Math.round(parseFloat(p1) * 1.3);
+      return `font-size: ${newSize}px`;
+    });
     
     // Clean CSS: Remove body background that conflicts, remove * reset
     css = css.replace(/\*\s*\{[^}]+\}/g, '');
