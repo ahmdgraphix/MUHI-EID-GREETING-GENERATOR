@@ -16,8 +16,9 @@ async function processTemplates() {
     const html = fs.readFileSync(path.join(TEMPLATES_DIR, file), 'utf8');
     const $ = cheerio.load(html);
 
-    // Set Title to EID CARD - X
-    const title = `EID CARD - ${i + 1}`;
+    // Get Title from HTML and format it as EID CARD - [Name]
+    let originalTitle = $('title').text() || `Template ${i + 1}`;
+    const title = originalTitle.replace(/Eid Card \d+\s*[–-]\s*/i, 'EID CARD - ').trim();
 
     // Get CSS and intelligently scale fonts to prevent overlapping layouts
     let css = $('style').html() || '';
