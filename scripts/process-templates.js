@@ -19,12 +19,21 @@ async function processTemplates() {
     // Set Title to EID CARD - X
     const title = `EID CARD - ${i + 1}`;
 
-    // Get CSS and scale up all font sizes by 30% to make them more readable
+    // Get CSS and intelligently scale fonts to prevent overlapping layouts
     let css = $('style').html() || '';
     css = css.replace(/font-size:\s*(\d+(?:\.\d+)?)px/g, (match, p1) => {
-      const newSize = Math.round(parseFloat(p1) * 1.3);
-      return `font-size: ${newSize}px`;
+      let size = parseFloat(p1);
+      if (size < 30) {
+        size = Math.round(size * 1.3); // Scale up small body text aggressively
+      } else if (size < 80) {
+        size = Math.round(size * 1.15); // Scale up medium headings gently
+      }
+      // Leave massive hero text (>80px) alone to prevent overlapping
+      return `font-size: ${size}px`;
     });
+    
+    // Convert hardcoded pixel line-heights to relative to prevent vertical overlap when fonts grow
+    css = css.replace(/line-height:\s*(\d+(?:\.\d+)?)px/g, 'line-height: 1.6');
 
     // Increase thin font weights for better legibility
     css = css.replace(/font-weight:\s*300/g, 'font-weight: 500');
