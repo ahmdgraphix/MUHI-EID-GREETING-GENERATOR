@@ -45,15 +45,11 @@ export function TemplateRenderer({ templateId, name, message }: TemplateRenderer
   // Custom positioning for specific templates based on their ID
   if (template.id === "template-1") {
     nameFooterStyles = "position: absolute; top: 65%; left: 0; right: 0; transform: translateY(-50%); text-align: center; z-index: 50;";
-  } else if (template.id === "template-2") {
-    nameFooterStyles = "position: absolute; top: 340px; left: 0; right: 0; text-align: center; z-index: 50;";
-  } else if (template.id === "template-4") {
+  } else if (template.id === "template-5") {
     nameFooterStyles = "position: absolute; bottom: 120px; left: 0; right: 0; text-align: center; z-index: 50;";
-  } else if (template.id === "template-6") {
-    nameFooterStyles = "position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; z-index: 50;";
-  } else if (template.id === "template-7") {
+  } else if (template.id === "template-9") {
     nameFooterStyles = "position: absolute; bottom: 25px; left: 0; right: 0; text-align: center; z-index: 50;";
-  } else if (template.id === "template-8") {
+  } else if (template.id === "template-10") {
     nameFooterStyles = "position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; z-index: 50;";
   }
 

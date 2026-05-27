@@ -89,8 +89,11 @@ async function processTemplates() {
     htmlString = htmlString.replace(/Wishing you peace, happiness and prosperity/gi, '');
     htmlString = htmlString.replace(/and fill your life with divine mercy/gi, '');
 
+    const fileMatch = file.match(/eid_card_0?(\d+)/);
+    const idNum = fileMatch ? fileMatch[1] : (i + 1);
+
     templates.push({
-      id: `template-${i + 1}`,
+      id: `template-${idNum}`,
       title,
       css: processedCss.css,
       html: htmlString
