@@ -76,7 +76,7 @@ export function Generator() {
       <div className="w-full max-w-[1400px] apple-card min-h-[500px] lg:min-h-[700px] flex flex-col lg:flex-row overflow-hidden relative rounded-none md:rounded-[48px] shadow-none md:shadow-2xl bg-white md:bg-transparent border-t md:border-t-0 border-black/[0.04]">
         
         {/* Left Sidebar - Controls */}
-        <div className="w-full lg:w-[420px] xl:w-[480px] bg-[#FBFBFD] md:bg-[#FBFBFD] border-b lg:border-b-0 lg:border-r border-black/[0.04] p-5 md:p-8 lg:p-10 flex flex-col gap-6 md:gap-8 z-10 shrink-0">
+        <div className="w-full lg:w-1/2 bg-[#FBFBFD] md:bg-[#FBFBFD] border-b lg:border-b-0 lg:border-r border-black/[0.04] p-5 md:p-8 lg:p-10 flex flex-col gap-6 md:gap-8 z-10 shrink-0">
           <div>
             <h2 className="text-[24px] md:text-[28px] font-extrabold text-[#111111] flex items-center gap-2 tracking-tight">
               <Wand2 className="w-6 h-6 text-muhi-blue" />
