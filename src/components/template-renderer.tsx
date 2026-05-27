@@ -40,8 +40,7 @@ export function TemplateRenderer({ templateId, name, message }: TemplateRenderer
   let htmlWithVars = template.html;
   // Replace placeholders
   htmlWithVars = htmlWithVars.replace(/\{\{message\}\}/g, finalMessage);
-  
-  let nameFooterStyles = "position: absolute; bottom: 80px; left: 0; right: 0; text-align: center; z-index: 50;";
+  let nameFooterStyles = "position: absolute; bottom: 40px; left: 0; right: 0; text-align: center; z-index: 50;";
   
   // Custom positioning for specific templates based on their ID
   if (template.id === "template-1") {
@@ -50,8 +49,12 @@ export function TemplateRenderer({ templateId, name, message }: TemplateRenderer
     nameFooterStyles = "position: absolute; top: 340px; left: 0; right: 0; text-align: center; z-index: 50;";
   } else if (template.id === "template-4") {
     nameFooterStyles = "position: absolute; bottom: 120px; left: 0; right: 0; text-align: center; z-index: 50;";
+  } else if (template.id === "template-6") {
+    nameFooterStyles = "position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; z-index: 50;";
   } else if (template.id === "template-7") {
-    nameFooterStyles = "position: absolute; bottom: 200px; left: 0; right: 0; text-align: center; z-index: 50;";
+    nameFooterStyles = "position: absolute; bottom: 25px; left: 0; right: 0; text-align: center; z-index: 50;";
+  } else if (template.id === "template-8") {
+    nameFooterStyles = "position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; z-index: 50;";
   }
 
   // Inject Name Footer
