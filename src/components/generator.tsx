@@ -88,7 +88,7 @@ export function Generator() {
           <div className="flex flex-col gap-5 md:gap-6">
             <div className="space-y-3">
               <Label className="text-[#111111] font-semibold text-[13px] uppercase tracking-wider">Design Theme</Label>
-              <Select value={theme} onValueChange={setTheme}>
+              <Select value={theme} onValueChange={(val) => { if (val) setTheme(val); }}>
                 <SelectTrigger className="bg-white border-black/[0.06] text-[#111111] focus:ring-4 focus:ring-muhi-blue/10 focus:border-muhi-blue/30 shadow-[0_2px_8px_rgba(0,0,0,0.02)] rounded-[14px] h-14 md:h-12 px-4 transition-all text-[16px] md:text-[14px]">
                   <SelectValue placeholder="Select Design" />
                 </SelectTrigger>
@@ -113,7 +113,7 @@ export function Generator() {
 
             <div className="space-y-3">
               <Label className="text-[#111111] font-semibold text-[13px] uppercase tracking-wider">Language</Label>
-              <Select value={language} onValueChange={(val) => setLanguage(val || "english")}>
+              <Select value={language} onValueChange={(val) => { if (val) setLanguage(val); }}>
                 <SelectTrigger className="bg-white border-black/[0.06] text-[#111111] focus:ring-4 focus:ring-muhi-blue/10 focus:border-muhi-blue/30 shadow-[0_2px_8px_rgba(0,0,0,0.02)] rounded-[14px] h-14 md:h-12 px-4 transition-all text-[16px] md:text-[14px]">
                   <SelectValue placeholder="Select Language" />
                 </SelectTrigger>
